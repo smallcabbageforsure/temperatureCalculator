@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <script>
+        function toCelsius() {
+            var fahrenheitInput = document.getElementById("fah").value;
+            if (!isNaN(fahrenheitInput)) {
+                var celsiusResult = (parseFloat(fahrenheitInput) - 32) * 5/9;
+                document.getElementById("result").innerHTML = "Result: " + celsiusResult.toFixed(2) + " °C";
+            } else {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Fahrenheit to Celsius Converter</h2>
+    <label for="fah">Enter Fahrenheit:</label>
+    <input type="text" id="fah" onkeyup="toCelsius()">
+    <button value="=" onclick="toCelsius()">Convert</button>
+    <p id="result"></p>
+
+</body>
+</html>
